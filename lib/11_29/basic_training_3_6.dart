@@ -7,8 +7,6 @@ void main() {
 
 
   print(name?.length);
-  print(name);
-
 
   print(age.length);
 }
