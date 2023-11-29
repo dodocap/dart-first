@@ -6,6 +6,7 @@ void main() {
   String age = '25';
 
 
+  print(name);
   print(name?.length);
 
 
