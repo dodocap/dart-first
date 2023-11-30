@@ -19,14 +19,24 @@ class Cleric {
     print('$name의 셀프 에이드 시전 HP : $hp MP : $mp');
   }
 
-  int pray(int time) {
+  int pray(int restTime) {
     int currentMp = mp;
-    int recovery = Random().nextInt(3);
-    mp += (time + recovery);
+    int bonusPoint = Random().nextInt(3);
+    mp += (restTime + bonusPoint);
     if(mp > maxMp) {
       mp = maxMp;
     }
-    print('$name은 $time초동안 기도하여 MP가 ${mp - currentMp}만큼 회복, 현재 mp는 $mp입니다.');
+    print('$name은 $restTime초동안 기도하여 MP가 ${mp - currentMp}만큼 회복, 현재 mp는 $mp입니다.');
     return mp - currentMp;
   }
+}
+void main() {
+  final cleric = Cleric('김수영');
+  cleric.selfAid();
+  cleric.selfAid();
+  cleric.selfAid();
+
+  cleric.pray(3);
+  cleric.pray(3);
+  cleric.pray(3);
 }
