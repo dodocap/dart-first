@@ -5,8 +5,8 @@ class Cleric {
   static const int maxMp = 10;
 
   String name;
-  int hp = maxHp;
-  int mp = maxMp;
+  int hp;
+  int mp;
 
   Cleric(
     this.name, {
