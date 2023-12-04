@@ -15,15 +15,28 @@ class Wizard {
         _hp = hp,
         _mp = mp,
         _wand = wand {
-    if (_name.length < 3) {
-      throw Exception('마법사 이름은 3글자 이상이어야 합니다');
-    }
-    if (_hp < 0) {
-      throw Exception('마법사의 HP는 0 이상이어야 합니다');
-    }
-    if (_mp < 0) {
-      throw Exception('마법사의 MP는 0 이상이어야 합니다');
-    }
+    _validateName(name);
+    _validateHp(hp);
+    _validateMp(mp);
+  }
+
+  set name(String name) {
+    _validateName(name);
+    _name = name;
+  }
+
+  set hp(int hp) {
+    _validateHp(hp);
+    _hp = hp;
+  }
+
+  set mp(int mp) {
+    _validateMp(mp);
+    _mp = mp;
+  }
+
+  set wand(Wand wand) {
+    _wand = wand;
   }
 
   void damage(int damage) {
@@ -32,5 +45,23 @@ class Wizard {
       _hp = 0;
     }
     print('마법사 $_name은(는) $damage만큼 피해를 입었다.(남은 체력: $_hp)');
+  }
+
+  void _validateName(String name) {
+    if (name.length < 3) {
+      throw Exception('마법사 이름은 3글자 이상이어야 합니다');
+    }
+  }
+
+  void _validateHp(int hp) {
+    if (hp < 0) {
+      throw Exception('마법사의 HP는 0 이상이어야 합니다');
+    }
+  }
+
+  void _validateMp(int mp) {
+    if (mp < 0) {
+      throw Exception('마법사의 MP는 0 이상이어야 합니다');
+    }
   }
 }
