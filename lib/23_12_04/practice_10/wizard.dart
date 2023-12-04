@@ -47,14 +47,6 @@ class Wizard {
     _wand = wand;
   }
 
-  void damage(int damage) {
-    _hp -= damage;
-    if (_hp < 0) {
-      _hp = 0;
-    }
-    print('마법사 $_name은(는) $damage만큼 피해를 입었다.(남은 체력: $_hp)');
-  }
-
   void _validateName(String name) {
     if (name.length < 3) {
       throw Exception('마법사 이름은 3글자 이상이어야 합니다');
@@ -63,7 +55,7 @@ class Wizard {
 
   void _validateHp(int hp) {
     if (hp < 0) {
-      throw Exception('마법사의 HP는 0 이상이어야 합니다');
+      _hp = 0;
     }
   }
 
