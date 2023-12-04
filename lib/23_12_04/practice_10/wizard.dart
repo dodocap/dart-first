@@ -20,20 +20,28 @@ class Wizard {
     _validateMp(mp);
   }
 
+  String get name => _name;
+
   set name(String name) {
     _validateName(name);
     _name = name;
   }
+
+  int get hp => _hp;
 
   set hp(int hp) {
     _validateHp(hp);
     _hp = hp;
   }
 
+  int get mp => _mp;
+
   set mp(int mp) {
     _validateMp(mp);
     _mp = mp;
   }
+
+  Wand get wand => _wand;
 
   set wand(Wand wand) {
     _wand = wand;

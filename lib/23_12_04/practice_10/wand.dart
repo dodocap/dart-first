@@ -11,10 +11,14 @@ class Wand {
     _validatePower(_power);
   }
 
+  String get name => _name;
+
   set name(String name) {
     _validateName(name);
     _name = name;
   }
+
+  double get power => _power;
 
   set power(double power) {
     _validatePower(power);
