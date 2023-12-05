@@ -16,6 +16,7 @@ class Hero {
       throw Exception('hp는 0보다 작을 수 없다');
     }
     _hp = value;
+    print('$name의 남은 체력 : $hp');
   }
 
   void attack(Slime slime) {
