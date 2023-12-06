@@ -4,11 +4,12 @@ abstract interface class Zerg implements Race {
   void recoveryHp();
 }
 
-abstract class ZergUnit extends Unit implements Zerg, Bionic {
+abstract class ZergUnit extends Unit implements Zerg, Bionic, GroupAvailable {
   ZergUnit({
     required super.name,
     required super.hp,
   });
+
   @override
   void recoveryHp() {
     hp += 1;
@@ -20,6 +21,7 @@ abstract class ZergStructure extends Unit implements Zerg {
     required super.name,
     required super.hp,
   });
+
   @override
   void recoveryHp() {
     hp += 2;

@@ -21,3 +21,9 @@ abstract interface class Movable {
 abstract interface class Attackable {
   void attack(Unit target);
 }
+
+abstract interface class GroupAvailable {
+  String get name;
+
+  int get hp;
+}

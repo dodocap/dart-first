@@ -23,7 +23,7 @@ class Vulture extends TerranMechanicUnit implements Attackable, Movable {
   }
 
   void deploySpiderMine() {
-    if(_remainOfMines > 0) {
+    if (_remainOfMines > 0) {
       print('$name의 마인 설치');
       _remainOfMines--;
     }

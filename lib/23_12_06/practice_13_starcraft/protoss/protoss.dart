@@ -19,7 +19,7 @@ abstract class ProtossUnit extends Unit implements Protoss {
   }
 }
 
-abstract class ProtossBionicUnit extends ProtossUnit implements Bionic {
+abstract class ProtossBionicUnit extends ProtossUnit implements Bionic, GroupAvailable {
   ProtossBionicUnit({
     required super.name,
     required super.hp,
@@ -27,8 +27,8 @@ abstract class ProtossBionicUnit extends ProtossUnit implements Bionic {
   });
 }
 
-abstract class ProtossMechinicUnit extends ProtossUnit implements Mechanic {
-  ProtossMechinicUnit({
+abstract class ProtossMechanicUnit extends ProtossUnit implements Mechanic, GroupAvailable {
+  ProtossMechanicUnit({
     required super.name,
     required super.hp,
     required super.shield,

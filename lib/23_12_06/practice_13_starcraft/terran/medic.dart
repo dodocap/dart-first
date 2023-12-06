@@ -8,9 +8,11 @@ class Medic extends TerranBionicUnit implements Movable {
   });
 
   void heal(Unit target) {
-    if(target is Bionic) {
+    if (target is Bionic) {
       print('$name의 치료');
       target.hp += 5;
+    } else {
+      print('$name은 생물만 치료 가능합니다');
     }
   }
 

@@ -5,9 +5,9 @@ import 'zerg/drone.dart';
 
 void main() {
   final group = Group();
-  List<Unit> units = [];
-  for(int i =0; i<12; i++){
-    final drone = Drone(name: 'Drone$i', hp: (i+1) * 10, damage: 5);
+  List<GroupAvailable> units = [];
+  for (int i = 0; i < 12; i++) {
+    final drone = Drone(name: 'Drone$i', hp: (i + 1) * 10, damage: 5);
     units.add(drone);
     group.clickUnit(drone);
   }

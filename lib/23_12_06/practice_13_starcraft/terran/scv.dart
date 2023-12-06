@@ -1,7 +1,7 @@
 import '../interfaces.dart';
 import 'terran.dart';
 
-class SCV extends Unit implements Terran, Bionic, Mechanic {
+class SCV extends TerranHybridUnit implements Attackable, Movable {
   int damage;
 
   SCV({
@@ -22,7 +22,7 @@ class SCV extends Unit implements Terran, Bionic, Mechanic {
   }
 
   void repair(Unit target) {
-    if(target is Mechanic) {
+    if (target is Mechanic) {
       print('$name의 수리중');
       target.hp += 3;
     }

@@ -1,7 +1,7 @@
 import '../interfaces.dart';
 import 'protoss.dart';
 
-class Dragoon extends ProtossMechinicUnit implements Attackable, Movable {
+class Dragoon extends ProtossMechanicUnit implements Attackable, Movable {
   int damage;
 
   Dragoon({
