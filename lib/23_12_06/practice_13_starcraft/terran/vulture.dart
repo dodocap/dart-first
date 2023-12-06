@@ -1,17 +1,15 @@
 import '../interfaces.dart';
 import 'terran.dart';
 
-class Vulture extends TerranUnit implements Mechanic, Attackable {
-  int _damage;
+class Vulture extends TerranMechanicUnit implements Attackable, Movable {
+  int damage;
+  int _remainOfMines = 3;
+
   Vulture({
     required super.name,
     required super.hp,
-    required int damage,
-  }) : _damage = damage;
-
-  void deploySpiderMine() {
-    // TODO
-  }
+    required this.damage,
+  });
 
   @override
   void attack(Unit target) {
@@ -21,14 +19,13 @@ class Vulture extends TerranUnit implements Mechanic, Attackable {
 
   @override
   void move() {
-    // TODO: implement move
+    print('$name의 이동');
   }
 
-  @override
-  int get damage => _damage;
-
-  @override
-  set damage(int damage) {
-    _damage = damage;
+  void deploySpiderMine() {
+    if(_remainOfMines > 0) {
+      print('$name의 마인 설치');
+      _remainOfMines--;
+    }
   }
 }

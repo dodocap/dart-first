@@ -1,3 +1,6 @@
+import 'dart:math';
+
+import '../interfaces.dart';
 import 'zerg.dart';
 
 class Hatchery extends ZergStructure {
@@ -6,8 +9,8 @@ class Hatchery extends ZergStructure {
     required super.hp,
   });
 
-  @override
-  void autoHeal() {
-    // TODO: implement autoHeal
+  void constructUnit(Unit target, int number) {
+    int numOfConstruct = Random().nextInt(3) + 1;
+    print('$name는 ${target.name}를 $numOfConstruct마리 생산하였다');
   }
 }

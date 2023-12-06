@@ -1,13 +1,13 @@
 import '../interfaces.dart';
 import 'terran.dart';
 
-class Marine extends TerranUnit implements Bionic, Attackable {
-  int _damage;
+class Marine extends TerranBionicUnit implements Attackable, Movable {
+  int damage;
   Marine({
     required super.name,
     required super.hp,
-    required int damage,
-  }) : _damage = damage;
+    required this.damage,
+  });
 
   @override
   void attack(Unit target) {
@@ -17,14 +17,6 @@ class Marine extends TerranUnit implements Bionic, Attackable {
 
   @override
   void move() {
-    // TODO: implement move
-  }
-
-  @override
-  int get damage => _damage;
-
-  @override
-  set damage(int damage) {
-    _damage = damage;
+    print('$name의 이동');
   }
 }

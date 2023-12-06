@@ -1,14 +1,15 @@
 import '../interfaces.dart';
 import 'protoss.dart';
 
-class Zealot extends ProtossUnit implements Bionic, Attackable {
-  int _damage;
+class Zealot extends ProtossBionicUnit implements Attackable, Movable {
+  int damage;
+
   Zealot({
     required super.name,
     required super.hp,
     required super.shield,
-    required int damage,
-  }) : _damage = damage;
+    required this.damage,
+  });
 
   @override
   void attack(Unit target) {
@@ -18,19 +19,6 @@ class Zealot extends ProtossUnit implements Bionic, Attackable {
 
   @override
   void move() {
-    // TODO: implement move
-  }
-
-  @override
-  void autoRechargeShield() {
-    // TODO: implement autoRechargeShield
-  }
-
-  @override
-  int get damage => _damage;
-
-  @override
-  set damage(int damage) {
-    _damage = damage;
+    print('$name의 이동');
   }
 }

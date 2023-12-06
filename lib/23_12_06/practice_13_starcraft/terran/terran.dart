@@ -2,8 +2,15 @@ import '../interfaces.dart';
 
 abstract interface class Terran implements Race {}
 
-abstract class TerranUnit extends Unit implements Terran, Movable {
-  TerranUnit({
+abstract class TerranBionicUnit extends Unit implements Terran, Bionic {
+  TerranBionicUnit({
+    required super.name,
+    required super.hp,
+  });
+}
+
+abstract class TerranMechanicUnit extends Unit implements Terran, Mechanic {
+  TerranMechanicUnit({
     required super.name,
     required super.hp,
   });

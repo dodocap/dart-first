@@ -1,24 +1,11 @@
 abstract class Unit {
-  String _name;
-  int _hp;
+  String name;
+  int hp;
 
   Unit({
-    required String name,
-    required int hp,
-  })  : _name = name,
-        _hp = hp;
-
-  int get hp => _hp;
-
-  set hp(int value) {
-    _hp = value;
-  }
-
-  String get name => _name;
-
-  set name(String value) {
-    _name = value;
-  }
+    required this.name,
+    required this.hp,
+  });
 }
 
 abstract interface class Race {}
@@ -33,8 +20,4 @@ abstract interface class Movable {
 
 abstract interface class Attackable {
   void attack(Unit target);
-
-  set damage(int damage);
-
-  int get damage;
 }

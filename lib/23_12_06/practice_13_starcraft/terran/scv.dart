@@ -1,14 +1,14 @@
 import '../interfaces.dart';
 import 'terran.dart';
 
-class SCV extends TerranUnit implements Bionic, Mechanic, Attackable {
-  int _damage;
+class SCV extends Unit implements Terran, Bionic, Mechanic {
+  int damage;
 
   SCV({
     required super.name,
     required super.hp,
-    required int damage,
-  }) : _damage = damage;
+    required this.damage,
+  });
 
   @override
   void attack(Unit target) {
@@ -21,11 +21,14 @@ class SCV extends TerranUnit implements Bionic, Mechanic, Attackable {
     // TODO: implement move
   }
 
-  @override
-  int get damage => _damage;
+  void repair(Unit target) {
+    if(target is Mechanic) {
+      print('$name의 수리중');
+      target.hp += 3;
+    }
+  }
 
-  @override
-  set damage(int damage) {
-    _damage = damage;
+  void getResource() {
+    print('$name의 자원 채취중..');
   }
 }
