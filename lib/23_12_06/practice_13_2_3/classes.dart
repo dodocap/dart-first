@@ -51,4 +51,12 @@ void main() {
   y1.a();     // Aa
   Y y2 = B();
   y2.a();     // Ba
+
+  print('---------------------------------');
+
+  // b()를 호출하기 위해선 <Y>로 List를 가져야 한다.
+  final List<Y> list = [A(), B()];
+  for(final element in list) {
+    element.b();
+  }
 }
