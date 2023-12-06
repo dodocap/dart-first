@@ -18,7 +18,7 @@ class SCV extends Unit implements Terran, Bionic, Mechanic {
 
   @override
   void move() {
-    // TODO: implement move
+    print('$name의 이동');
   }
 
   void repair(Unit target) {
