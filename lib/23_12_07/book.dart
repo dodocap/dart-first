@@ -25,6 +25,18 @@ class Book implements Comparable<Book> {
     return publishDate.compareTo(other.publishDate);
   }
 
+  Book copyWith({
+    String? title,
+    DateTime? publishDate,
+    String? comment,
+  }) {
+    return Book(
+      title: title ?? this.title,
+      publishDate: publishDate ?? this.publishDate,
+      comment: comment ?? this.comment,
+    );
+  }
+
   @override
   String toString() => '책{제목: $title, 출간일: ${_dateFormatter.format(publishDate)}, comment: $comment}';
 }
@@ -47,4 +59,8 @@ void main() {
   print(bookList);
   bookList.sort();
   print(bookList);
+
+  print('------------------------------------------------------------------------------');
+  final copiedOfBook3 = book3.copyWith(comment: '불법복제본');
+  print(copiedOfBook3);
 }
