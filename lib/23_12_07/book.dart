@@ -1,6 +1,6 @@
 import 'package:intl/intl.dart';
 
-class Book {
+class Book implements Comparable<Book> {
   static final _dateFormatter = DateFormat('yyyy-MM-dd');
 
   String title;
@@ -21,6 +21,11 @@ class Book {
   int get hashCode => title.hashCode ^ publishDate.hashCode;
 
   @override
+  int compareTo(Book other) {
+    return publishDate.compareTo(other.publishDate);
+  }
+
+  @override
   String toString() => '책{제목: $title, 출간일: ${_dateFormatter.format(publishDate)}, comment: $comment}';
 }
 
@@ -38,4 +43,8 @@ void main() {
   print(bookSet);
   print('------------------------------------------------------------------------------');
 
+  final bookList = [book1, book2, book3, book4];
+  print(bookList);
+  bookList.sort();
+  print(bookList);
 }
