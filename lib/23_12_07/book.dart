@@ -15,10 +15,14 @@ class Book implements Comparable<Book> {
 
   @override
   bool operator ==(Object other) =>
-      identical(this, other) || other is Book && runtimeType == other.runtimeType && title == other.title && publishDate == other.publishDate;
+      identical(this, other) ||
+      other is Book &&
+          runtimeType == other.runtimeType &&
+          title == other.title &&
+          _dateFormatter.format(publishDate) == _dateFormatter.format(other.publishDate);
 
   @override
-  int get hashCode => title.hashCode ^ publishDate.hashCode;
+  int get hashCode => title.hashCode ^ _dateFormatter.format(publishDate).hashCode;
 
   @override
   int compareTo(Book other) {
