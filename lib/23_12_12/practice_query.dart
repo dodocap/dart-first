@@ -70,11 +70,15 @@ void main() {
   _printResultEnd(strBuffer);
 
   strBuffer.write('[7. 전체 트랜잭션 중 최대값은 얼마인가?]\n');
-  strBuffer.write(transactions.map((e) => e.value).reduce((v1, v2) => max(v1, v2)));
+  strBuffer.write(transactions.map((e) => e.value).reduce(max));
+  // Collections Library에 더 짧게 줄일 수 있음
+  // transactions.map((e) => e.value).max;
   _printResultEnd(strBuffer);
 
   strBuffer.write('[8. 전체 트랜잭션 중 최소값은 얼마인가?]\n');
-  strBuffer.write(transactions.map((e) => e.value).reduce((v1, v2) => min(v1, v2)));
+  strBuffer.write(transactions.map((e) => e.value).reduce(min));
+  // Collections Library에 더 짧게 줄일 수 있음
+  // transactions.map((e) => e.value).min;
   _printResultEnd(strBuffer);
 }
 
