@@ -16,15 +16,15 @@ void main() {
     otherPost = Post(userId: 2, id: 2, title: '다른 제목', body: '다른 내용');
   });
 
-  setUp(() {
+  setUp(() async {
     PostRepository postRepository = MockPostMemoryRepository();
     postManager = PostManager(postRepository: postRepository);
 
     // given 신규 포스트 1개 삽입
-    postManager.addPost(newPost);
+    await postManager.addPost(newPost);
   });
 
-  test('연습문제5_메모리 불러오기', () async {
+  test('연습문제5_포스트 불러오기', () async {
     // when (포스트를 불러옴)
     List<Post> postList = await postManager.getPosts();
 
